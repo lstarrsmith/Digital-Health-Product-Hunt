@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Tag</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/grid.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">   
+</head>
+<body>
+
+   <div class="grid-container header">
+        <div class="grid-1">
+              <a href="/"><img src='images/logo.png' height="80px"></a>
+          </div>
+        
+        <div class="grid-9 top_nav">
+              <ul>
+                {{#tags}}
+                <li>
+                  <a href="/tags/{{id}}">{{tag_name}}</a>
+                </li>
+                {{/tags}}
+              </ul>
+        </div>
+        <div class="grid-2 search_bar"
+            <form method="get" action="/search" id="search">
+             <input name="q" type="text" size="40" placeholder="Search"/>
+            </form> 
+          </br>
+          <div class="add_objects">
+            <a href="/add_tag"><img src='images/add_tag.png' height="50" width="42"></a>
+            <a href="/add_post"><img src='images/add_post.png' height="50" width="42"></a>
+           </div>
+
+        </div>
+       
+   </div>
+
+    <div class="straight_line">
+    </div>
+
+   	<div class="grid-container add_form">
+		  <form action="/add_tag" method="POST">
+		    <input type="text" name="tag_name" placeholder="Tag Name" required/>
+		    <input type="text" name="description" placeholder="Description" required/> 
+		    <button>Add Tag</button>
+		  </form>
+  	</div>
+
+
+
+</body>
+</html>
+
+
+
